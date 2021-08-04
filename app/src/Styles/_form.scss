@@ -1,5 +1,5 @@
-#myForm{
-  margin: 10px auto;
+#myForm {
+  margin-bottom: 20px;
   background-color: #282c34;
   padding: 10px;
 
@@ -9,29 +9,31 @@
 
   color: white;
 
-  .form__row{
+  .form__row {
     display: flex;
     flex-direction: row;
   }
 
-  .form__item{
+  .form__item {
     display: flex;
     flex-direction: column;
     max-width: 200px;
     margin-top: 10px;
   }
 
-  .form__item__check{
+  .form__item__check {
     margin-top: 10px;
+
     p {
       margin-right: 10px;
     }
+
     display: flex;
     flex-direction: row;
     align-items: center;
   }
 
-  button{
+  button {
     border: none;
     outline: none;
     background-color: #8de96d;
@@ -39,8 +41,6 @@
     font-size: 1.5em;
   }
 }
-
-
 
 
 /* The switch - the box around the slider */

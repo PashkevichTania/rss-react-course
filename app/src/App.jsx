@@ -1,6 +1,5 @@
 import React from 'react';
 
-import './App.css';
 import './Styles/main.scss';
 import './Styles/card.scss';
 import './Styles/search.scss';
