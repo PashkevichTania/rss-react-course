@@ -1,8 +1,7 @@
 import React from 'react';
 
 const Form = (props) => {
-
-  console.log('form',props)
+  console.log('form', props);
 
   const { cards, setCards } = props;
 
@@ -19,7 +18,7 @@ const Form = (props) => {
     };
 
     console.log(user);
-    setCards([...cards, user])
+    setCards([...cards, user]);
 
     myForm.userName.value = '';
     myForm.date.value = '';
