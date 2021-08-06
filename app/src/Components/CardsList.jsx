@@ -2,24 +2,23 @@ import React from 'react';
 import faker from 'faker';
 import Card from './Card';
 
-const CardsList = () => {
+const CardsList = (props) => {
+
+  console.log('cardlist',props)
+
+  const { cards } = props;
+
   const CARDS_LIST = [];
 
-  const createUser = () => ({
-    name: faker.name.findName(),
-    email: faker.internet.email(),
-    bio: faker.lorem.sentence(),
-    image: faker.image.avatar(),
-  });
 
-  for (let i = 0; i < 12; i++) {
-    const user = createUser();
+  for (let i = 0; i < cards.length; i++) {
+
     CARDS_LIST.push(
       <Card
-        img={user.image}
-        name={user.name}
-        email={user.email}
-        bio={user.bio}
+        img={faker.image.avatar()}
+        name={cards[i].userName}
+        dateOfBirth={cards[i].dateOfBirth}
+        country={cards[i].country}
         key={i}
       />,
     );

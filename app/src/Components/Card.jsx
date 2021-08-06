@@ -1,16 +1,15 @@
 import React from 'react';
 
 const Card = (props) => {
-  const { img, name, email } = props;
+  const { img, name, dateOfBirth, country } = props;
 
   return (
     <div className="card">
       <img src={img} alt="Person" className="card__image" />
       <p className="card__name">{name}</p>
-      <p>{email}</p>
       <div className="grid-container">
-        <div className="grid-child-posts">156 Post</div>
-        <div className="grid-child-followers">1012 Likes</div>
+        <div className="grid-child-posts">{country}</div>
+        <div className="grid-child-followers">{dateOfBirth}</div>
       </div>
       <button className="btn draw-border" type="button">Follow</button>
       <button className="btn draw-border" type="button">Message</button>
