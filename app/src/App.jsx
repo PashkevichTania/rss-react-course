@@ -1,23 +1,24 @@
-import React, { useState } from 'react';
-
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './Styles/main.scss';
 import './Styles/card.scss';
 import './Styles/search.scss';
-import CardsList from './Components/CardsList';
-import SearchBar from './Components/SearchBar';
-import Form from './Components/Form';
+import Home from './Components/Home';
+import NewsPage from './Components/NewsPage';
+import Header from './Components/Header';
 
 function App() {
-  const [cards, setCards] = useState([]);
-
   return (
-    <div className="App">
-      <header className="App-header">
-        <SearchBar />
-      </header>
-      <Form cards={cards} setCards={setCards} />
-      <CardsList cards={cards} />
-    </div>
+    <Router>
+      <div className="App">
+        <Header />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/News/" component={NewsPage} />
+        </Switch>
+      </div>
+    </Router>
+
   );
 }
 

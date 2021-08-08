@@ -1,4 +1,28 @@
-// SEARCH BEGINS
+ul {
+  list-style-type: none;
+}
+
+.articles_search {
+  color: white;
+  background-color: #282c34;
+  margin: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.articles_text {
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.articles_img{
+  object-fit: cover;
+}
+
+// SEARCH
 .search {
   width: 500px;
   height: 40px;
