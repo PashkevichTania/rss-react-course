@@ -1,4 +1,5 @@
 import React from 'react';
+import faker from 'faker';
 
 const Form = (props) => {
   console.log('form', props);
@@ -10,6 +11,7 @@ const Form = (props) => {
     const myForm = document.getElementById('myForm');
 
     const user = {
+      image: faker.image.avatar(),
       userName: event.target[0].value,
       dateOfBirth: event.target[1].value,
       country: event.target[2].value,

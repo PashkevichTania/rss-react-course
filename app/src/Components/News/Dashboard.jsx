@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import axios from '../Services/api';
+import axios from '../../Services/api';
 import Articles from './Articles';
 
 const API_KEY = 'b3f3853c39804a67b2b35f7e2ad0f4c6';
@@ -38,6 +38,7 @@ const Dashboard = () => {
     e.preventDefault();
     await apiGet();
   }
+
   const handleChange = (e) => {
     const { value } = e.target;
     setSearchValue(value);
@@ -47,6 +48,7 @@ const Dashboard = () => {
     <div className="page-wrap">
       <form className="search-gr" onSubmit={handleSubmit}>
         <label htmlFor="search">
+          Search:
           <input
             id="search"
             type="text"
@@ -58,7 +60,6 @@ const Dashboard = () => {
         </label>
         <div className="radio__inputs">
           <label htmlFor="relevancy">
-            relevancy
             <input
               id="relevancy"
               type="radio"
@@ -66,9 +67,9 @@ const Dashboard = () => {
               checked={sortBy === 'relevancy'}
               onChange={() => setSortBy('relevancy')}
             />
+            relevancy
           </label>
           <label htmlFor="popularity">
-            popularity
             <input
               id="popularity"
               type="radio"
@@ -76,9 +77,9 @@ const Dashboard = () => {
               checked={sortBy === 'popularity'}
               onChange={() => setSortBy('popularity')}
             />
+            popularity
           </label>
           <label htmlFor="publishedAt">
-            publishedAt
             <input
               id="publishedAt"
               type="radio"
@@ -86,6 +87,7 @@ const Dashboard = () => {
               checked={sortBy === 'publishedAt'}
               onChange={() => setSortBy('publishedAt')}
             />
+            publishedAt
           </label>
         </div>
         <button type="submit" disabled={isLoading}>
@@ -93,10 +95,18 @@ const Dashboard = () => {
         </button>
       </form>
       <Articles articles={arts} />
-      <form onSubmit={pageHandler}>
-        <input type="text" pattern="^([\d]{1,5})$" name="page" />
-        <button type="submit">go to page</button>
-      </form>
+      {arts.length
+        ? (
+          <form onSubmit={pageHandler}>
+            <input type="text" pattern="^([\d]{1,5})$" name="page" />
+            <button type="submit">go to page</button>
+          </form>
+        )
+        : (
+          <div style={{ color: 'white', fontSize: '2em' }}>
+            Search something!
+          </div>
+        )}
     </div>
   );
 };

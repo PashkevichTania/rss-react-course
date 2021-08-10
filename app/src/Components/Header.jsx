@@ -15,6 +15,16 @@ const Header = () => (
         Home
       </NavLink>
       <NavLink
+        exact
+        activeStyle={{
+          fontWeight: 'bold',
+          textDecoration: 'underline',
+        }}
+        to="/About/"
+      >
+        About
+      </NavLink>
+      <NavLink
         to="/News/"
         activeStyle={{
           fontWeight: 'bold',

@@ -13,8 +13,7 @@ const Card = (props) => {
         <div className="grid-child-posts">{country}</div>
         <div className="grid-child-followers">{dateOfBirth}</div>
       </div>
-      <button className="btn draw-border" type="button">Follow</button>
-      <button className="btn draw-border" type="button">Message</button>
+      <button className="btn draw-border" type="button">More Info</button>
     </div>
   );
 };

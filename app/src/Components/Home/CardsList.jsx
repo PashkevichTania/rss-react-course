@@ -1,5 +1,4 @@
 import React from 'react';
-import faker from 'faker';
 import Card from './Card';
 
 const CardsList = (props) => {
@@ -12,7 +11,7 @@ const CardsList = (props) => {
   for (let i = 0; i < cards.length; i++) {
     CARDS_LIST.push(
       <Card
-        img={faker.image.avatar()}
+        img={cards[i].image}
         name={cards[i].userName}
         dateOfBirth={cards[i].dateOfBirth}
         country={cards[i].country}
