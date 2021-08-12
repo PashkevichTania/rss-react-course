@@ -8,6 +8,7 @@ import NewsPage from './Components/News/NewsPage';
 import Header from './Components/Header';
 import About from './Components/About/About';
 import Page404 from './Components/Page404/Page404';
+import DetailsPage from './Components/Details/DetailsPage';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Header />
         <Switch>
           <Route exact path="/" component={Home} />
+          <Route path="/details/:art_id" component={DetailsPage} />
           <Route path="/News/" component={NewsPage} />
           <Route path="/About/" component={About} />
           <Route component={Page404} />

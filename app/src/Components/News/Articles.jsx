@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Articles = ({ articles }) => (
   <div className="">
@@ -6,7 +7,7 @@ const Articles = ({ articles }) => (
       {articles.map(({
         author, title, publishedAt, urlToImage, description,
       }) => (
-        <li className="articles_search" key={Math.floor(Math.random())}>
+        <li className="articles_search" key={title + Math.floor(Math.random())}>
           <div className="articles_text">
             <h2>{title}</h2>
             <p>
@@ -18,6 +19,7 @@ const Articles = ({ articles }) => (
               {publishedAt}
             </p>
             <p>{description}</p>
+            <Link to={`/details/${title}`}>Read more</Link>
           </div>
           <img className="articles_img" width={200} src={urlToImage} alt={title} />
         </li>

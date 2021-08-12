@@ -7,7 +7,7 @@ const API_KEY = 'b3f3853c39804a67b2b35f7e2ad0f4c6';
 const Dashboard = () => {
   const [searchValue, setSearchValue] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const [arts, setArt] = useState([]);
+  const [arts, setArts] = useState([]);
   const [sortBy, setSortBy] = useState('popularity');
   const [page, setPage] = useState(1);
 
@@ -18,7 +18,7 @@ const Dashboard = () => {
         `https://newsapi.org/v2/everything?q=${searchValue}&sortBy=${sortBy}&apiKey=${API_KEY}&pageSize=10&page=${page}`,
       );
       console.log(response.data);
-      setArt(response.data.articles);
+      setArts(response.data.articles);
     } catch (err) {
       console.log(err);
     } finally {
@@ -29,7 +29,6 @@ const Dashboard = () => {
   async function pageHandler(event) {
     event.preventDefault();
     const input = event.target[0].value;
-    console.log(input);
     setPage(input);
     await apiGet();
   }
