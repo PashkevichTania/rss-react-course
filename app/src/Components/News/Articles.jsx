@@ -7,7 +7,7 @@ const Articles = ({ articles }) => (
       {articles.map(({
         author, title, publishedAt, urlToImage, description,
       }) => (
-        <li className="articles_search" key={title + Math.floor(Math.random())}>
+        <li className="articles_search" key={title + Math.floor(Math.random() * 100)}>
           <div className="articles_text">
             <h2>{title}</h2>
             <p>

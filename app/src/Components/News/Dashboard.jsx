@@ -1,41 +1,31 @@
 import React, { useState } from 'react';
-import axios from '../../Services/api';
+import { useDispatch, useSelector } from 'react-redux';
 import Articles from './Articles';
-
-const API_KEY = 'b3f3853c39804a67b2b35f7e2ad0f4c6';
+import { fetchArticles } from '../../Redux/actions';
+import { articlesSelector, loadingSelector } from '../../Redux/selectors';
 
 const Dashboard = () => {
+  const dispatch = useDispatch();
+
   const [searchValue, setSearchValue] = useState('');
-  const [isLoading, setIsLoading] = useState(false);
-  const [arts, setArts] = useState([]);
   const [sortBy, setSortBy] = useState('popularity');
   const [page, setPage] = useState(1);
 
-  async function apiGet() {
-    setIsLoading(true);
-    try {
-      const response = await axios.get(
-        `https://newsapi.org/v2/everything?q=${searchValue}&sortBy=${sortBy}&apiKey=${API_KEY}&pageSize=10&page=${page}`,
-      );
-      console.log(response.data);
-      setArts(response.data.articles);
-    } catch (err) {
-      console.log(err);
-    } finally {
-      setIsLoading(false);
-    }
-  }
+  const isLoading = useSelector(loadingSelector);
+  const articles = useSelector(articlesSelector);
+  console.log('isLoading', isLoading);
+  console.log('aaaaaa', articles);
 
   async function pageHandler(event) {
     event.preventDefault();
     const input = event.target[0].value;
     setPage(input);
-    await apiGet();
+    dispatch(fetchArticles(searchValue, sortBy, page));
   }
 
   async function handleSubmit(e) {
     e.preventDefault();
-    await apiGet();
+    dispatch(fetchArticles(searchValue, sortBy, page));
   }
 
   const handleChange = (e) => {
@@ -90,16 +80,18 @@ const Dashboard = () => {
           </label>
         </div>
         <button type="submit" disabled={isLoading}>
-          {isLoading ? 'Loading...' : 'Search'}
+          {(isLoading === undefined) ? 'Loading...' : 'Search'}
         </button>
       </form>
-      <Articles articles={arts} />
-      {arts.length
+      {articles
         ? (
-          <form onSubmit={pageHandler}>
-            <input type="text" pattern="^([\d]{1,5})$" name="page" />
-            <button type="submit">go to page</button>
-          </form>
+          <div>
+            <Articles articles={articles} />
+            <form onSubmit={pageHandler}>
+              <input type="text" pattern="^([\d]{1,5})$" name="page" />
+              <button type="submit">go to page</button>
+            </form>
+          </div>
         )
         : (
           <div style={{ color: 'white', fontSize: '2em' }}>
