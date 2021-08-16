@@ -4,7 +4,7 @@ const initialState = {
   loading: false,
 };
 
-export const appReducer = (action = { type: HIDE_LOADER }, state = initialState) => {
+const appReducer = (action = { type: HIDE_LOADER }, state = initialState) => {
   switch (action.type) {
     case SHOW_LOADER:
       return { loading: true };
@@ -13,3 +13,5 @@ export const appReducer = (action = { type: HIDE_LOADER }, state = initialState)
     default: return state;
   }
 };
+
+export default appReducer;
