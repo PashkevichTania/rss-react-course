@@ -8,7 +8,7 @@ const About = () => {
 
   return (
     <div className="About">
-      <p style={style}>
+      <p style={style} data-testid="About">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam at nisl et neque feugiat
         gravida laoreet ut
         erat. Quisque vitae leo non nibh volutpat auctor nec sed velit. Nunc erat nibh, egestas id

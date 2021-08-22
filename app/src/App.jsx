@@ -13,7 +13,7 @@ import DetailsPage from './Components/Details/DetailsPage';
 function App() {
   return (
     <Router>
-      <div className="App">
+      <div className="App" data-testid="App">
         <Header />
         <Switch>
           <Route exact path="/" component={Home} />

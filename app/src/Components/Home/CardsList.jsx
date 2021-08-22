@@ -2,7 +2,6 @@ import React from 'react';
 import Card from './Card';
 
 const CardsList = (props) => {
-  console.log('cardlist', props);
 
   const { cards } = props;
 

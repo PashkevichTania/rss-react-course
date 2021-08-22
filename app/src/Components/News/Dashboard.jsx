@@ -13,8 +13,6 @@ const Dashboard = () => {
 
   const isLoading = useSelector(loadingSelector);
   const articles = useSelector(articlesSelector);
-  console.log('isLoading', isLoading);
-  console.log('aaaaaa', articles);
 
   async function pageHandler(event) {
     event.preventDefault();

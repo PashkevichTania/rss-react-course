@@ -2,7 +2,6 @@ import React from 'react';
 import faker from 'faker';
 
 const Form = (props) => {
-  console.log('form', props);
 
   const { cards, setCards } = props;
 

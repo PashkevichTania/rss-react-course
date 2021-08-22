@@ -1,9 +1,9 @@
-import React from 'react';
-import renderer from 'react-test-renderer';
-import App from '../src/App';
+import {showLoader, hideLoader, deleteArticles, fetchArticles} from '../src/Redux/actions'
 import {test} from "@jest/globals";
 
-test('Link changes the class when hovered', () => {
-
-  expect(0).toBe(0)
+test('redux should return correct types', () => {
+  expect(showLoader().type).toBe("APP/SHOW_LOADER")
+  expect(hideLoader().type).toBe("APP/HIDE_LOADER")
+  expect(deleteArticles().type).toBe("ARTICLES/DELETE_ARTICLES")
 });
+
