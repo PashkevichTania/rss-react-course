@@ -2,7 +2,6 @@ import React from 'react';
 import faker from 'faker';
 
 const Form = (props) => {
-
   const { cards, setCards } = props;
 
   const submitHandler = (event) => {
@@ -18,7 +17,6 @@ const Form = (props) => {
       promotions: event.target[4].checked,
     };
 
-    console.log(user);
     setCards([...cards, user]);
 
     myForm.userName.value = '';

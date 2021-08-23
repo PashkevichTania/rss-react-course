@@ -23,7 +23,8 @@ export function fetchArticles(searchValue, sortBy, page) {
     try {
       const response = await
       axios.get(`https://newsapi.org/v2/everything?q=${searchValue}&sortBy=${sortBy}&apiKey=${API_KEY}&pageSize=10&page=${page}`);
-      console.log(response.data.articles);
+      console.log(`https://newsapi.org/v2/everything?q=${searchValue}&sortBy=${sortBy}&apiKey=${API_KEY}&pageSize=10&page=${page}`);
+      console.log(response.data);
       dispatch({ type: FETCH_ARTICLES, payload: response.data.articles });
     } catch (err) {
       console.log(err);
