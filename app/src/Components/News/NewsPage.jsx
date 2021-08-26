@@ -30,11 +30,12 @@ const NewsPage = () => {
   };
 
   return (
-    <div className="page-wrap">
+    <div className="page-wrap" data-testid="newsPage">
       <form className="search-gr" onSubmit={handleSubmit}>
         <label htmlFor="search">
           Search:
           <input
+            data-testid="news-input"
             id="search"
             type="text"
             value={searchValue}
@@ -75,13 +76,13 @@ const NewsPage = () => {
             publishedAt
           </label>
         </div>
-        <button type="submit" disabled={isLoading}>
+        <button type="submit" disabled={isLoading} data-testid="news-btn">
           {(isLoading === true) ? 'Loading...' : 'Search'}
         </button>
       </form>
       { (articles && articles.length > 5)
         ? (
-          <div>
+          <div data-testid="news-div">
             <Articles articles={articles} />
             <form onSubmit={pageHandler}>
               <input type="text" pattern="^([\d]{1,5})$" name="page" />
