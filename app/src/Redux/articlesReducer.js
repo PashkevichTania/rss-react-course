@@ -1,13 +1,16 @@
-import { DELETE_ARTICLES, FETCH_ARTICLES } from './types';
+import { DELETE_ARTICLES, FETCH_ARTICLES } from "./types";
 
 const initialState = {
   articles: [],
 };
 
-const articlesReducer = (action = {
-  type: DELETE_ARTICLES,
-  payload: [],
-}, state = initialState) => {
+const articlesReducer = (
+  action = {
+    type: DELETE_ARTICLES,
+    payload: [],
+  },
+  state = initialState
+) => {
   switch (action.type) {
     case FETCH_ARTICLES:
       return { articles: action.payload };

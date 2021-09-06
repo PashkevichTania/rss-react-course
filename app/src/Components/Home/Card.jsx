@@ -1,9 +1,7 @@
-import React from 'react';
+import React from "react";
 
 const Card = (props) => {
-  const {
-    img, name, dateOfBirth, country,
-  } = props;
+  const { img, name, dateOfBirth, country } = props;
 
   return (
     <div className="card">

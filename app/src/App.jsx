@@ -1,14 +1,14 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import './Styles/main.scss';
-import './Styles/card.scss';
-import './Styles/search.scss';
-import Home from './Components/Home/Home';
-import NewsPage from './Components/News/NewsPage';
-import Header from './Components/Header';
-import About from './Components/About/About';
-import Page404 from './Components/Page404/Page404';
-import DetailsPage from './Components/Details/DetailsPage';
+import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import "./Styles/main.scss";
+import "./Styles/card.scss";
+import "./Styles/search.scss";
+import Home from "./Components/Home/Home";
+import NewsPage from "./Components/News/NewsPage";
+import Header from "./Components/Header";
+import About from "./Components/About/About";
+import Page404 from "./Components/Page404/Page404";
+import DetailsPage from "./Components/Details/DetailsPage";
 
 function App() {
   return (
@@ -24,7 +24,6 @@ function App() {
         </Switch>
       </div>
     </Router>
-
   );
 }
 

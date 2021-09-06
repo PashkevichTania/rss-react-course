@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import Articles from './Articles';
-import { fetchArticles } from '../../Redux/actions';
-import { articlesSelector, loadingSelector } from '../../Redux/selectors';
+import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import Articles from "./Articles";
+import { fetchArticles } from "../../Redux/actions";
+import { articlesSelector, loadingSelector } from "../../Redux/selectors";
 
 const NewsPage = () => {
   const dispatch = useDispatch();
 
-  const [searchValue, setSearchValue] = useState('');
-  const [sortBy, setSortBy] = useState('popularity');
+  const [searchValue, setSearchValue] = useState("");
+  const [sortBy, setSortBy] = useState("popularity");
 
   const isLoading = useSelector(loadingSelector);
   const articles = useSelector(articlesSelector);
@@ -50,8 +50,8 @@ const NewsPage = () => {
               id="relevancy"
               type="radio"
               value="relevancy"
-              checked={sortBy === 'relevancy'}
-              onChange={() => setSortBy('relevancy')}
+              checked={sortBy === "relevancy"}
+              onChange={() => setSortBy("relevancy")}
             />
             relevancy
           </label>
@@ -60,8 +60,8 @@ const NewsPage = () => {
               id="popularity"
               type="radio"
               value="popularity"
-              checked={sortBy === 'popularity'}
-              onChange={() => setSortBy('popularity')}
+              checked={sortBy === "popularity"}
+              onChange={() => setSortBy("popularity")}
             />
             popularity
           </label>
@@ -70,31 +70,27 @@ const NewsPage = () => {
               id="publishedAt"
               type="radio"
               value="publishedAt"
-              checked={sortBy === 'publishedAt'}
-              onChange={() => setSortBy('publishedAt')}
+              checked={sortBy === "publishedAt"}
+              onChange={() => setSortBy("publishedAt")}
             />
             publishedAt
           </label>
         </div>
         <button type="submit" disabled={isLoading} data-testid="news-btn">
-          {(isLoading === true) ? 'Loading...' : 'Search'}
+          {isLoading === true ? "Loading..." : "Search"}
         </button>
       </form>
-      { (articles && articles.length > 5)
-        ? (
-          <div data-testid="news-div">
-            <Articles articles={articles} />
-            <form onSubmit={pageHandler}>
-              <input type="text" pattern="^([\d]{1,5})$" name="page" />
-              <button type="submit">go to page</button>
-            </form>
-          </div>
-        )
-        : (
-          <div style={{ color: 'white', fontSize: '2em' }}>
-            Search something!
-          </div>
-        )}
+      {articles && articles.length > 5 ? (
+        <div data-testid="news-div">
+          <Articles articles={articles} />
+          <form onSubmit={pageHandler}>
+            <input type="text" pattern="^([\d]{1,5})$" name="page" />
+            <button type="submit">go to page</button>
+          </form>
+        </div>
+      ) : (
+        <div style={{ color: "white", fontSize: "2em" }}>Search something!</div>
+      )}
     </div>
   );
 };

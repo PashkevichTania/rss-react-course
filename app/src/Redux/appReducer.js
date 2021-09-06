@@ -1,4 +1,4 @@
-import { HIDE_LOADER, SHOW_LOADER } from './types';
+import { HIDE_LOADER, SHOW_LOADER } from "./types";
 
 const initialState = {
   loading: false,
@@ -10,7 +10,8 @@ const appReducer = (action = { type: HIDE_LOADER }, state = initialState) => {
       return { loading: true };
     case HIDE_LOADER:
       return { loading: false };
-    default: return state;
+    default:
+      return state;
   }
 };
 

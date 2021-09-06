@@ -1,5 +1,5 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
+import React from "react";
+import { NavLink } from "react-router-dom";
 
 const Header = () => (
   <header>
@@ -7,8 +7,8 @@ const Header = () => (
       <NavLink
         exact
         activeStyle={{
-          fontWeight: 'bold',
-          textDecoration: 'underline',
+          fontWeight: "bold",
+          textDecoration: "underline",
         }}
         to="/"
       >
@@ -17,8 +17,8 @@ const Header = () => (
       <NavLink
         exact
         activeStyle={{
-          fontWeight: 'bold',
-          textDecoration: 'underline',
+          fontWeight: "bold",
+          textDecoration: "underline",
         }}
         to="/About/"
       >
@@ -27,8 +27,8 @@ const Header = () => (
       <NavLink
         to="/News/"
         activeStyle={{
-          fontWeight: 'bold',
-          textDecoration: 'underline',
+          fontWeight: "bold",
+          textDecoration: "underline",
         }}
       >
         News Page

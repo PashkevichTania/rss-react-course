@@ -1,12 +1,12 @@
-import React from 'react';
-import faker from 'faker';
+import React from "react";
+import faker from "faker";
 
 const Form = (props) => {
   const { cards, setCards } = props;
 
   const submitHandler = (event) => {
     event.preventDefault();
-    const myForm = document.getElementById('myForm');
+    const myForm = document.getElementById("myForm");
 
     const user = {
       image: faker.image.avatar(),
@@ -19,9 +19,9 @@ const Form = (props) => {
 
     setCards([...cards, user]);
 
-    myForm.userName.value = '';
-    myForm.date.value = '';
-    myForm.country.value = 'US';
+    myForm.userName.value = "";
+    myForm.date.value = "";
+    myForm.country.value = "US";
     myForm.check.checked = false;
     myForm.promotions.checked = false;
   };
@@ -78,11 +78,18 @@ const Form = (props) => {
         <div className="form__item__check">
           <p>I want to receive notifications about promotions</p>
           <label className="switch" htmlFor="promotions">
-            <input id="promotions" type="checkbox" name="promotions" value="checkbox1" />
+            <input
+              id="promotions"
+              type="checkbox"
+              name="promotions"
+              value="checkbox1"
+            />
             <span className="slider round" />
           </label>
         </div>
-        <button id="submitBtn" type="submit">Submit</button>
+        <button id="submitBtn" type="submit">
+          Submit
+        </button>
       </form>
     </div>
   );
